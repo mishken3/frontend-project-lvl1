@@ -8,4 +8,4 @@
 
 ### GitHub Actions
 
-![GitHub Actions](https://github.com/mishken3/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)
+[![GitHub Actions](https://github.com/mishken3/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/mishken3/frontend-project-lvl1/actions)
