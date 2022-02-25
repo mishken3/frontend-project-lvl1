@@ -5,3 +5,7 @@
 ### Maintainability Badges
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+### GitHub Actions
+
+![GitHub Actions](https://github.com/mishken3/frontend-project-lvl1/actions/workflows/main.yml/badge.svg)
