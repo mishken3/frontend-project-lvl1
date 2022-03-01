@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 export const roundsCount = 3;
 
-const playBrainGame = (gameDescription, rounds, roundsCount) => {
+const playBrainGame = (gameDescription, rounds) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -14,7 +14,7 @@ const playBrainGame = (gameDescription, rounds, roundsCount) => {
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== answer) {
       console.log(
-        `'${userAnswerLow}' is wrong answer ;(. Correct answer was '${answer}'.`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
