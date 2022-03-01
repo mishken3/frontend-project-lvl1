@@ -15,7 +15,8 @@ const numberHide = (array) => {
 const gcdLogic = () => {
   const numberStart = random(1, 10);
   const numberGrow = random(1, 5);
-  const progressionLength = 9;
+  const progressionLength = random(5, 10);
+
   // const numberArray = new Array(progressionLength); to test
   const numberArray = [];
   for (
