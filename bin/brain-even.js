@@ -1,50 +1,21 @@
-import readlineSync from 'readline-sync';
+import { random } from 'lodash';
 
-const generateNumber = () => Math.ceil(Math.random() * 100);
+const gameDescription =
+  'Answer "yes" if the number is even, otherwise answer "no".';
 
-const parityCheck = (number) => number % 2 === 0 ? 'yes' : 'no';
+const roundsCount = 3;
 
-/* const winCount = () => {
-  let count = 0;
-  count += 1;
-} */
+const isEven = (num) => num % 2 === 0; // () ?
 
-const answerCheck = (answer, randomNubmer, winCount) => {
-  const parityNum = parityCheck(randomNubmer);
-  if (parityNum === answer) {
-    // winCount += 1;
-    // winCount();
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${parityNum}'.`);
+const genTask = () => {
+  const question = random(1, 100);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
+};
+
+export default () => {
+  const rounds = [];
+  for (let round = 0; round < roundsCount; round += 1) {
+    rounds.push(genTask());
   }
-}
-
-
-function brainEven(name) {
-  // let count = winCount();
-  // console.warn('!! winCount before ->', count());
-
-
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = generateNumber();
-
-    console.log(`Question: ${randomNumber}`);
-
-    const answer = readlineSync.question('Your answer: ');
-    answerCheck(answer, randomNumber);
-  }
-  // console.warn('!! winCount after ->', count());
-  // if (winCount === 3) {
-  //   console.log(`Congratulations, test!`)
-  // }
-
-
- 
-}
-
-brainEven();
-
-export default brainEven;
+};
