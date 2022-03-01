@@ -1,9 +1,8 @@
-import { random } from 'lodash';
+import random from 'lodash/random.js';
+import playBrainGame, { roundsCount } from '../src/index.js';
 
 const gameDescription =
   'Answer "yes" if the number is even, otherwise answer "no".';
-
-const roundsCount = 3;
 
 const isEven = (num) => num % 2 === 0; // () ?
 
@@ -18,4 +17,5 @@ export default () => {
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(genTask());
   }
+  playBrainGame(gameDescription, rounds, roundsCount);
 };
