@@ -3,7 +3,7 @@ import playBrainGame, { roundsCount } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-const genNumbers = () => {
+const calcLogic = () => {
   const operands = ['+', '-', '*'];
   const operand = operands[Math.floor(Math.random() * operands.length)];
   const number1 = random(1, 100);
@@ -24,7 +24,7 @@ const genNumbers = () => {
 const brainCalc = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(genNumbers());
+    rounds.push(calcLogic());
   }
   playBrainGame(gameDescription, rounds);
 };

@@ -5,7 +5,7 @@ const gameDescription = 'Answer "yes" if the number is even, otherwise answer "n
 
 const isEven = (num) => num % 2 === 0; // () ?
 
-const genTask = () => {
+const evenLogic = () => {
   const question = random(1, 100);
   const answer = isEven(question) ? 'yes' : 'no';
   return [question, answer];
@@ -14,7 +14,7 @@ const genTask = () => {
 const brainEven = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(genTask());
+    rounds.push(evenLogic());
   }
   playBrainGame(gameDescription, rounds);
 };

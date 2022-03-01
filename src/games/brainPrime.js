@@ -13,7 +13,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const genPrime = () => {
+const primeLogic = () => {
   const question = random(1, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
@@ -22,7 +22,7 @@ const genPrime = () => {
 const brainPrime = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(genPrime());
+    rounds.push(primeLogic());
   }
   playBrainGame(gameDescription, rounds);
 };
