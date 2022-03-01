@@ -11,10 +11,12 @@ const genTask = () => {
   return [question, answer];
 };
 
-export default () => {
+const brainEven = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(genTask());
   }
   playBrainGame(gameDescription, rounds);
 };
+
+export default brainEven;
