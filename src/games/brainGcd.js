@@ -7,10 +7,9 @@ const gameDescription = 'Find the greatest common divisor of given numbers.';
 const gcdLogic = () => {
   const number1 = random(1, 100);
   const number2 = random(1, 100);
-  // console.log('test');
 
   const question = `${number1} ${number2}`;
-  const answer = gcd(number1, number2);
+  const answer = String(gcd(number1, number2));
 
   return [question, answer];
 };
