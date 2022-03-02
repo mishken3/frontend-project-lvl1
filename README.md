@@ -76,7 +76,7 @@ The goal is to find the missing number in progression
 
     make brain-progression
 
-[![asciicast](https://asciinema.org/a/Y16OAVxsSsqSPMD1BZeB4RGmt.svg)](https://asciinema.org/a/Y16OAVxsSsqSPMD1BZeB4RGmt)
+[![asciicast](https://asciinema.org/a/D8eQw4lvrJoNxNPHGGphH8Vb1.svg)](https://asciinema.org/a/D8eQw4lvrJoNxNPHGGphH8Vb1)
 
 ---
 

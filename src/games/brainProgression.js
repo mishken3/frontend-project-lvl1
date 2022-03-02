@@ -14,7 +14,7 @@ const numberHide = (array) => {
   return [replacedArray.join(' '), replacedNumber];
 };
 
-const gcdLogic = () => {
+const progressionLogic = () => {
   const numberStart = random(1, 10);
   const numberGrow = random(1, 5);
   const progressionLength = random(5, 10);
@@ -36,7 +36,7 @@ const gcdLogic = () => {
 const brainProgression = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(gcdLogic());
+    rounds.push(progressionLogic());
   }
   playBrainGame(gameDescription, rounds);
 };
