@@ -5,12 +5,13 @@ const gameDescription = 'What number is missing in the progression?';
 
 const numberHide = (array) => {
   const replaceText = '..';
-  const startNumber = random(0, array.length - 1);
+  const replacedIndex = random(0, array.length - 1);
+  const replacedNumber = String(array[replacedIndex]);
 
   const replacedArray = [...array];
-  replacedArray.splice(startNumber, 1, replaceText);
+  replacedArray.splice(replacedIndex, 1, replaceText);
 
-  return replacedArray.join(' ');
+  return [replacedArray.join(' '), replacedNumber];
 };
 
 const gcdLogic = () => {
@@ -27,8 +28,7 @@ const gcdLogic = () => {
     numberArray.push(i);
   }
 
-  const question = numberHide(numberArray);
-  const answer = String(numberGrow);
+  const [question, answer] = numberHide(numberArray);
 
   return [question, answer];
 };
