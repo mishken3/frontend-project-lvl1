@@ -9,7 +9,8 @@ const numberHide = (array) => {
 
   const replacedArray = [...array];
   replacedArray.splice(startNumber, 1, replaceText);
-  return replacedArray;
+
+  return replacedArray.join(' ');
 };
 
 const gcdLogic = () => {
