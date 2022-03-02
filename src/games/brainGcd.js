@@ -8,7 +8,12 @@ const gcdLogic = () => {
   const number1 = random(1, 100);
   const number2 = random(1, 100);
 
-  const question = `${number1} ${number2}`;
+  // const question = `${number1} ${number2}`;
+  const question = 'TEST';
+
+  // console.log('question!?! ->', question);
+  // console.log('typeof question!?! ->', typeof question);
+
   const answer = String(gcd(number1, number2));
 
   return [question, answer];
