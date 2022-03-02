@@ -5,16 +5,19 @@ import playBrainGame, { roundsCount } from '../index.js';
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const gcdLogic = () => {
+  /*   
   const number1 = random(1, 100);
   const number2 = random(1, 100);
+*/
+  const firstNumber = random(1, 100);
+  const secondNumber = random(1, 100);
 
-  // const question = `${number1} ${number2}`;
-  const question = 'TEST';
+  const question = `${firstNumber} ${secondNumber}`;
 
   // console.log('question!?! ->', question);
   // console.log('typeof question!?! ->', typeof question);
 
-  const answer = String(gcd(number1, number2));
+  const answer = String(gcd(firstNumber, secondNumber));
 
   return [question, answer];
 };
