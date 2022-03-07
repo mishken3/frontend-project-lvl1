@@ -21,7 +21,6 @@ const brainGcd = () => {
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(gcdLogic());
   }
-  console.log('ROUNDS ARR GCD IN GCD->', rounds);
   playBrainGame(gameDescription, rounds);
 };
 
