@@ -1,27 +1,21 @@
 import random from 'lodash/random.js';
-import playBrainGame, { roundsCount } from '../index.js';
+import playBrainGame from '../index.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (a, b) => (b === 0 ? a : getGCD(b, a % b));
 
 const gcdLogic = () => {
-  const firstNumber = random(1, 100);
-  const secondNumber = random(1, 100);
+  const num1 = random(1, 100);
+  const num2 = random(1, 100);
 
-  const question = `${firstNumber} ${secondNumber}`;
+  const question = `${num1} ${num2}`;
 
-  const answer = String(getGCD(firstNumber, secondNumber));
+  const answer = String(getGCD(num1, num2));
 
   return [question, answer];
 };
 
-const runBrainGcd = () => {
-  const rounds = [];
-  for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(gcdLogic());
-  }
-  playBrainGame(gameDescription, rounds);
-};
+const runBrainProgression = () => playBrainGame(gameDescription, gcdLogic);
 
-export default runBrainGcd;
+export default runBrainProgression;

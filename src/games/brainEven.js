@@ -1,7 +1,8 @@
 import random from 'lodash/random.js';
-import playBrainGame, { roundsCount } from '../index.js';
+import playBrainGame from '../index.js';
 
-const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameDescription =
+  'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0; // () ?
 
@@ -11,12 +12,6 @@ const evenLogic = () => {
   return [question, answer];
 };
 
-const runBrainEven = () => {
-  const rounds = [];
-  for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(evenLogic());
-  }
-  playBrainGame(gameDescription, rounds);
-};
+const runBrainProgression = () => playBrainGame(gameDescription, evenLogic);
 
-export default runBrainEven;
+export default runBrainProgression;

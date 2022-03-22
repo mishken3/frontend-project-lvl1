@@ -1,35 +1,29 @@
 import random from 'lodash/random.js';
-import playBrainGame, { roundsCount } from '../index.js';
+import playBrainGame from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const progressionLogic = () => {
+const generateRound = () => {
   const numberStart = random(1, 10);
   const numberGrow = random(1, 5);
   const progressionLength = random(5, 10);
 
-  const numberArray = [];
+  const progression = [];
   for (
     let i = numberStart;
     i <= progressionLength * numberGrow + numberStart;
     i += numberGrow
   ) {
-    numberArray.push(i);
+    progression.push(i);
   }
 
-  const replacedIndex = random(0, numberArray.length - 1);
-  const answer = numberArray[replacedIndex];
-  numberArray[replacedIndex] = '..';
+  const replacedIndex = random(0, progression.length - 1);
+  const answer = progression[replacedIndex];
+  progression[replacedIndex] = '..';
 
-  return [numberArray.join(' '), String(answer)];
+  return [progression.join(' '), String(answer)];
 };
 
-const playBrainProgression = () => {
-  const rounds = [];
-  for (let round = 0; round < roundsCount; round += 1) {
-    rounds.push(progressionLogic());
-  }
-  playBrainGame(gameDescription, rounds);
-};
+const runBrainProgression = () => playBrainGame(gameDescription, generateRound);
 
-export default playBrainProgression;
+export default runBrainProgression;
