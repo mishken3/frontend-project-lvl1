@@ -1,8 +1,7 @@
 import random from 'lodash/random.js';
 import playBrainGame from '../index.js';
 
-const gameDescription =
-  'Answer "yes" if given number is prime. Otherwise answer "no"';
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (number) => {
   if (number < 2) return false;
@@ -15,9 +14,8 @@ const isPrime = (number) => {
 };
 
 const generateRound = () => {
-  // generateRound
   const num = random(1, 100);
-  const answer = isPrime(question) ? 'yes' : 'no';
+  const answer = isPrime(num) ? 'yes' : 'no';
   return [num, answer];
 };
 

@@ -1,15 +1,14 @@
 import random from 'lodash/random.js';
 import playBrainGame from '../index.js';
 
-const gameDescription =
-  'Answer "yes" if the number is even, otherwise answer "no".';
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0; // () ?
 
 const evenLogic = () => {
-  const question = random(1, 100);
-  const answer = isEven(question) ? 'yes' : 'no';
-  return [question, answer];
+  const num = random(1, 100);
+  const answer = isEven(num) ? 'yes' : 'no';
+  return [num, answer];
 };
 
 const runBrainProgression = () => playBrainGame(gameDescription, evenLogic);
