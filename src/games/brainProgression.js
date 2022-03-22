@@ -3,17 +3,6 @@ import playBrainGame, { roundsCount } from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const numberHide = (array) => {
-  const replaceText = '..';
-  const replacedIndex = random(0, array.length - 1);
-  const replacedNumber = String(array[replacedIndex]);
-
-  const replacedArray = [...array];
-  replacedArray.splice(replacedIndex, 1, replaceText);
-
-  return [replacedArray.join(' '), replacedNumber];
-};
-
 const progressionLogic = () => {
   const numberStart = random(1, 10);
   const numberGrow = random(1, 5);
@@ -28,9 +17,11 @@ const progressionLogic = () => {
     numberArray.push(i);
   }
 
-  const [question, answer] = numberHide(numberArray);
+  const replacedIndex = random(0, numberArray.length - 1);
+  const answer = numberArray[replacedIndex];
+  numberArray[replacedIndex] = '..';
 
-  return [question, answer];
+  return [numberArray.join(' '), String(answer)];
 };
 
 const brainProgression = () => {
