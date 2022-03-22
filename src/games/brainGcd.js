@@ -16,7 +16,7 @@ const gcdLogic = () => {
   return [question, answer];
 };
 
-const brainGcd = () => {
+const runBrainGcd = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(gcdLogic());
@@ -24,4 +24,4 @@ const brainGcd = () => {
   playBrainGame(gameDescription, rounds);
 };
 
-export default brainGcd;
+export default runBrainGcd;

@@ -8,8 +8,8 @@ const playBrainGame = (gameDescription, rounds) => {
   console.log(`Hello, ${userName}!`);
   console.log(`${gameDescription}`);
 
-  for (let i = 0; i < roundsCount; i += 1) {
-    const [question, answer] = rounds[i];
+  for (let currentRound = 0; currentRound < roundsCount; currentRound += 1) {
+    const [question, answer] = rounds[currentRound];
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== answer) {

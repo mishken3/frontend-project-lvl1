@@ -11,7 +11,7 @@ const evenLogic = () => {
   return [question, answer];
 };
 
-const brainEven = () => {
+const runBrainEven = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(evenLogic());
@@ -19,4 +19,4 @@ const brainEven = () => {
   playBrainGame(gameDescription, rounds);
 };
 
-export default brainEven;
+export default runBrainEven;

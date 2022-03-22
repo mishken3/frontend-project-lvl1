@@ -19,7 +19,7 @@ const primeLogic = () => {
   return [question, answer];
 };
 
-const brainPrime = () => {
+const runBrainPrime = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(primeLogic());
@@ -27,4 +27,4 @@ const brainPrime = () => {
   playBrainGame(gameDescription, rounds);
 };
 
-export default brainPrime;
+export default runBrainPrime;

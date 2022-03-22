@@ -24,7 +24,7 @@ const progressionLogic = () => {
   return [numberArray.join(' '), String(answer)];
 };
 
-const brainProgression = () => {
+const playBrainProgression = () => {
   const rounds = [];
   for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(progressionLogic());
@@ -32,4 +32,4 @@ const brainProgression = () => {
   playBrainGame(gameDescription, rounds);
 };
 
-export default brainProgression;
+export default playBrainProgression;
