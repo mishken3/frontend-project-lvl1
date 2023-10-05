@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "[![Actions Status](https://github.com/mishken3/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mishken3/frontend-project-lvl1/actions)",
   "main": "index.js",
   "type": "module",
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/mishken3/frontend-project-lvl1#readme",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "dependencies": {
     "readline-sync": "1.4.10"
