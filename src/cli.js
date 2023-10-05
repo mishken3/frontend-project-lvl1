@@ -5,5 +5,7 @@ export const greetings = () => {
 
   if (name) {
     console.log(`Hello, ${name}!`);
+
+    return name;
   }
 };
