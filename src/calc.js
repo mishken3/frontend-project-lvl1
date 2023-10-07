@@ -4,10 +4,10 @@ import { generateRandomNumber, MAX_GAMES_COUNTER } from './utils.js';
 const EXPLANATION_GAME_TEXT = 'What is the result of the expression?';
 
 const generateRandomMathSign = () => {
-  const signIndex = Math.floor(Math.random() * 3);
-  const signs = ['+', '-', '*'];
+  const mathSigns = ['+', '-', '*'];
+  const index = Math.floor(Math.random() * 3);
 
-  return signs[signIndex];
+  return mathSigns[index];
 };
 
 const calcGameProcess = (userName, gameCounter) => {
@@ -22,8 +22,6 @@ const calcGameProcess = (userName, gameCounter) => {
   const randomSign = generateRandomMathSign();
   // eslint-disable-next-line no-eval
   const expressionResult = eval(`${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
-  console.log('expressionResult ->', expressionResult);
-  console.log('expressionResult typeof ->', typeof expressionResult);
 
   console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
   const userInput = parseInt(readlineSync.question('Your answer: '), 10);
