@@ -9,3 +9,7 @@ publish:
 
 lint:
 	npx eslint .
+
+local-publish:
+	make publish
+	npm link

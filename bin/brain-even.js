@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { isEvenGame } from '../src/even-logic.js';
-import { greetings } from '../src/cli.js';
+import { isEvenGame } from '../src/games/even.js';
+import { app } from '../src/index.js';
 
-isEvenGame(greetings());
+app(isEvenGame);
