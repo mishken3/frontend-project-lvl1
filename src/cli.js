@@ -8,4 +8,6 @@ export const greetings = () => {
 
     return name;
   }
+
+  return null;
 };
