@@ -24,7 +24,7 @@ const gcdGameProcess = () => {
     console.log('Correct!');
   } else {
     const userInputErr = Number.isNaN(userInputParsed) ? userInput : userInputParsed;
-    const errObj = { userInput, correctAnswer: userInputErr };
+    const errObj = { userInput: userInputErr, correctAnswer: gcd };
     throw errObj;
   }
 };
