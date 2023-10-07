@@ -3,32 +3,41 @@ import { generateRandomNumber } from '../utils.js';
 
 const EXPLANATION_GAME_TEXT = 'What is the result of the expression?';
 
-const generateRandomMathSign = () => {
-  const mathSigns = ['+', '-', '*'];
-  const index = Math.floor(Math.random() * 3);
-
-  return mathSigns[index];
+const mathSigns = ['+', '-', '*'];
+const mapBySign = {
+  '+': (numberOne, numberTwo) => numberOne + numberTwo,
+  '-': (numberOne, numberTwo) => numberOne - numberTwo,
+  '*': (numberOne, numberTwo) => numberOne * numberTwo,
 };
 
-/*
-map => key (*, +, -)
+/**
+ * Иной способ создания функции вычисления путём подставления знака между операндами.
+ * Жаль, что практически тоже самое, что и eval()
+
+  const mapBySign = mathSigns.reduce((acc, sign) =>
+  ({ ...acc, [sign]: new Function('a', 'b', `return a ${sign} b;`) }), {});
 */
 
-const getExpressionString = () => {
+const getRandomMathSign = (mathSignsArr) => {
+  const index = Math.floor(Math.random() * mathSignsArr.length);
+
+  return mathSignsArr[index];
+};
+
+const getRandomExpression = () => {
   const numberOne = generateRandomNumber();
   const numberTwo = generateRandomNumber();
-  const randomSign = generateRandomMathSign();
-  const expression = `${numberOne} ${randomSign} ${numberTwo}`;
+  const randomSign = getRandomMathSign(mathSigns);
 
-  return expression;
+  const expressionResult = mapBySign[randomSign](numberOne, numberTwo, randomSign);
+  const expressionString = `${numberOne} ${randomSign} ${numberTwo}`;
+
+  return { expressionString, expressionResult };
 };
 
 const calcGameProcess = () => {
-  const expression = getExpressionString();
-
-  // eslint-disable-next-line no-eval
-  const expressionResult = eval(expression);
-  console.log('Question: ', expression);
+  const { expressionString, expressionResult } = getRandomExpression();
+  console.log('Question: ', expressionString);
 
   const userInput = readlineSync.question('Your answer: ');
   const userInputParsed = parseInt(userInput, 10);
