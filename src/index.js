@@ -12,7 +12,7 @@ export const app = (game) => {
       gameCounter += 1;
     }
 
-    console.log(`Congratulations, ${userName}`);
+    console.log(`Congratulations, ${userName}!`);
   } catch (error) {
     const errorText = `'${error.userInput}' is wrong answer ;(. Correct answer was '${error.correctAnswer}'.`;
     console.log(errorText);
