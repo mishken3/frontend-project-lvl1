@@ -37,7 +37,7 @@ const getRandomExpression = () => {
 
 const calcGameProcess = () => {
   const { expressionString, expressionResult } = getRandomExpression();
-  console.log('Question: ', expressionString);
+  console.log(`Question: ${expressionString}`);
 
   const userInput = readlineSync.question('Your answer: ');
   const userInputParsed = parseInt(userInput, 10);

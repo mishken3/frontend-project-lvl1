@@ -12,7 +12,7 @@ const isPrime = (number) => {
 
 const isPrimeGameProcess = () => {
   const randomNumber = generateRandomNumber();
-  console.log('Question: ', randomNumber);
+  console.log(`Question: ${randomNumber}`);
 
   const userInput = readlineSync.question('Your answer: ');
   const isPrimeAnswer = isPrime(randomNumber) ? 'yes' : 'no';

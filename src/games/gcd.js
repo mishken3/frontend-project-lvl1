@@ -14,7 +14,7 @@ const getGcdNumber = (a, b) => {
 const gcdGameProcess = () => {
   const numberOne = generateRandomNumber();
   const numberTwo = generateRandomNumber();
-  const gcd = getGcdNumber(numberOne);
+  const gcd = getGcdNumber(numberOne, numberTwo);
 
   console.log(`Question: ${numberOne} ${numberTwo}`);
   const userInput = readlineSync.question('Your answer: ');

@@ -16,6 +16,6 @@ export const app = (game) => {
   } catch (error) {
     const errorText = `'${error.userInput}' is wrong answer ;(. Correct answer was '${error.correctAnswer}'.`;
     console.log(errorText);
-    console.log(`Let's try again, ${userName}`);
+    console.log(`Let's try again, ${userName}!`);
   }
 };
