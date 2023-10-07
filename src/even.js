@@ -1,10 +1,8 @@
 import readlineSync from 'readline-sync';
-
-const MAX_GAMES_COUNTER = 3;
+import { generateRandomNumber, MAX_GAMES_COUNTER } from './utils.js';
 
 const EXPLANATION_GAME_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateRandomNumber = () => Math.floor(Math.random() * 100);
 const getIsEvenNumber = (number) => number % 2 === 0;
 
 const isEvenGameProcess = (userName, gameCounter) => {
