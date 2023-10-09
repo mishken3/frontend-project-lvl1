@@ -1,7 +1,7 @@
-import { greetings } from './cli.js';
+import greetings from './cli.js';
 import { MAX_GAMES_COUNTER } from './utils.js';
 
-export const app = (game) => {
+const app = (game) => {
   const userName = greetings();
 
   let gameCounter = 1;
@@ -16,6 +16,8 @@ export const app = (game) => {
   } catch (error) {
     const errorText = `'${error.userInput}' is wrong answer ;(. Correct answer was '${error.correctAnswer}'.`;
     console.log(errorText);
-    console.log(`Let's try again, ${userName}`);
+    console.log(`Let's try again, ${userName}!`);
   }
 };
+
+export default app;

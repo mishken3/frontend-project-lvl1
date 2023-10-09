@@ -19,8 +19,10 @@ const isEvenGameProcess = () => {
   }
 };
 
-export const isEvenGame = () => {
+const isEvenGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   isEvenGameProcess();
 };
+
+export default isEvenGame;

@@ -5,7 +5,7 @@ const EXPLANATION_GAME_TEXT = 'What number is missing in the progression?';
 
 const generateProgressionStep = () => {
   const number = generateRandomNumber(4);
-  if (number === 1) return generateProgressionStep();
+  if (number === 0) return generateProgressionStep();
 
   return number;
 };
@@ -13,6 +13,7 @@ const generateProgressionStep = () => {
 const generateProgression = () => {
   const progression = [];
   const PROGRESSION_STEP = generateProgressionStep();
+  console.log('PROGRESSION_STEP :>> ', PROGRESSION_STEP);
   const PROGRESSION_LENGTH = 7;
 
   const firstNumber = generateRandomNumber();
@@ -32,9 +33,9 @@ const progressionGameProcess = () => {
   const hiddenItem = progression.splice(hiddenItemIndex, 1, '...').at(0);
 
   const hiddenProgression = [...progression];
-  hiddenProgression[hiddenItemIndex] = '...';
+  hiddenProgression[hiddenItemIndex] = '..';
 
-  console.log(`Question: ${hiddenProgression.join(', ')}`);
+  console.log(`Question: ${hiddenProgression.join(' ')}`);
   const userInput = readlineSync.question('Your answer: ');
   const userInputParsed = parseInt(userInput, 10);
 
@@ -47,8 +48,10 @@ const progressionGameProcess = () => {
   }
 };
 
-export const progressionGame = () => {
+const progressionGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   progressionGameProcess();
 };
+
+export default progressionGame;

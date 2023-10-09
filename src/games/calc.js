@@ -37,7 +37,7 @@ const getRandomExpression = () => {
 
 const calcGameProcess = () => {
   const { expressionString, expressionResult } = getRandomExpression();
-  console.log('Question: ', expressionString);
+  console.log(`Question: ${expressionString}`);
 
   const userInput = readlineSync.question('Your answer: ');
   const userInputParsed = parseInt(userInput, 10);
@@ -51,8 +51,10 @@ const calcGameProcess = () => {
   }
 };
 
-export const calcGame = () => {
+const calcGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   calcGameProcess();
 };
+
+export default calcGame;
