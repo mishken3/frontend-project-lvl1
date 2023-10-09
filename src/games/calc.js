@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { generateRandomNumber, checkAnswer } from '../utils.js';
+import app from '../index.js';
 
 const EXPLANATION_GAME_TEXT = 'What is the result of the expression?';
 
@@ -49,4 +50,4 @@ const calcGame = () => {
   calcGameProcess();
 };
 
-export default calcGame;
+export default () => app(calcGame);

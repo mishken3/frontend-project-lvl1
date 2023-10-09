@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { generateRandomNumber, checkAnswer } from '../utils.js';
+import app from '../index.js';
 
 const EXPLANATION_GAME_TEXT = 'Find the greatest common divisor of given numbers.';
 
@@ -28,4 +29,4 @@ const gcdGame = () => {
   gcdGameProcess();
 };
 
-export default gcdGame;
+export default () => app(gcdGame);
