@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateRandomNumber } from '../utils.js';
+import { generateRandomNumber, checkAnswer } from '../utils.js';
 
 const EXPLANATION_GAME_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,12 +11,7 @@ const isEvenGameProcess = () => {
   console.log(`Question: ${randomNumber}`);
   const userInput = readlineSync.question('Your answer: ').toLowerCase();
 
-  if (userInput === isEvenNumber) {
-    console.log('Correct!');
-  } else {
-    const errObj = { userInput, correctAnswer: isEvenNumber };
-    throw errObj;
-  }
+  checkAnswer(userInput, isEvenNumber);
 };
 
 const isEvenGame = () => {
