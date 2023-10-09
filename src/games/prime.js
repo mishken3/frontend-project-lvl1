@@ -25,8 +25,10 @@ const isPrimeGameProcess = () => {
   }
 };
 
-export const isPrimeGame = () => {
+const isPrimeGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   isPrimeGameProcess();
 };
+
+export default isPrimeGame;

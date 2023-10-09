@@ -48,8 +48,10 @@ const progressionGameProcess = () => {
   }
 };
 
-export const progressionGame = () => {
+const progressionGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   progressionGameProcess();
 };
+
+export default progressionGame;

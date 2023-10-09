@@ -1,7 +1,7 @@
-import { greetings } from './cli.js';
+import greetings from './cli.js';
 import { MAX_GAMES_COUNTER } from './utils.js';
 
-export const app = (game) => {
+const app = (game) => {
   const userName = greetings();
 
   let gameCounter = 1;
@@ -19,3 +19,5 @@ export const app = (game) => {
     console.log(`Let's try again, ${userName}!`);
   }
 };
+
+export default app;

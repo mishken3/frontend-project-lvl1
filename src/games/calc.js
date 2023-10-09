@@ -51,8 +51,10 @@ const calcGameProcess = () => {
   }
 };
 
-export const calcGame = () => {
+const calcGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   calcGameProcess();
 };
+
+export default calcGame;

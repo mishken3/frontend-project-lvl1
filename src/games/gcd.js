@@ -29,8 +29,10 @@ const gcdGameProcess = () => {
   }
 };
 
-export const gcdGame = () => {
+const gcdGame = () => {
   console.log(EXPLANATION_GAME_TEXT);
 
   gcdGameProcess();
 };
+
+export default gcdGame;

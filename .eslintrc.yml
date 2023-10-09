@@ -11,4 +11,3 @@ rules:
     - error
     - ignorePackages
     - js: always
-  import/prefer-default-export: [off, { target: any }]
