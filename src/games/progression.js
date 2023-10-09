@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateRandomNumber } from '../utils.js';
+import { generateRandomNumber, checkAnswer } from '../utils.js';
 
 const EXPLANATION_GAME_TEXT = 'What number is missing in the progression?';
 
@@ -13,7 +13,6 @@ const generateProgressionStep = () => {
 const generateProgression = () => {
   const progression = [];
   const PROGRESSION_STEP = generateProgressionStep();
-  console.log('PROGRESSION_STEP :>> ', PROGRESSION_STEP);
   const PROGRESSION_LENGTH = 7;
 
   const firstNumber = generateRandomNumber();
@@ -37,15 +36,8 @@ const progressionGameProcess = () => {
 
   console.log(`Question: ${hiddenProgression.join(' ')}`);
   const userInput = readlineSync.question('Your answer: ');
-  const userInputParsed = parseInt(userInput, 10);
 
-  if (userInputParsed === hiddenItem) {
-    console.log('Correct!');
-  } else {
-    const userInputErr = Number.isNaN(userInputParsed) ? userInput : userInputParsed;
-    const errObj = { userInput: userInputErr, correctAnswer: hiddenItem };
-    throw errObj;
-  }
+  checkAnswer(userInput, hiddenItem);
 };
 
 const progressionGame = () => {

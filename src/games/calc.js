@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateRandomNumber } from '../utils.js';
+import { generateRandomNumber, checkAnswer } from '../utils.js';
 
 const EXPLANATION_GAME_TEXT = 'What is the result of the expression?';
 
@@ -38,17 +38,9 @@ const getRandomExpression = () => {
 const calcGameProcess = () => {
   const { expressionString, expressionResult } = getRandomExpression();
   console.log(`Question: ${expressionString}`);
-
   const userInput = readlineSync.question('Your answer: ');
-  const userInputParsed = parseInt(userInput, 10);
 
-  if (userInputParsed === expressionResult) {
-    console.log('Correct!');
-  } else {
-    const userInputErr = Number.isNaN(userInputParsed) ? userInput : userInputParsed;
-    const errObj = { userInput: userInputErr, correctAnswer: expressionResult };
-    throw errObj;
-  }
+  checkAnswer(userInput, expressionResult);
 };
 
 const calcGame = () => {
