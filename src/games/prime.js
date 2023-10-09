@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { generateRandomNumber, checkAnswer } from '../utils.js';
+import app from '../index.js';
 
 const EXPLANATION_GAME_TEXT = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -26,4 +27,4 @@ const isPrimeGame = () => {
   isPrimeGameProcess();
 };
 
-export default isPrimeGame;
+export default () => app(isPrimeGame);

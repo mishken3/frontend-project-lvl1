@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { generateRandomNumber, checkAnswer } from '../utils.js';
+import app from '../index.js';
 
 const EXPLANATION_GAME_TEXT = 'What number is missing in the progression?';
 
@@ -46,4 +47,4 @@ const progressionGame = () => {
   progressionGameProcess();
 };
 
-export default progressionGame;
+export default () => app(progressionGame);
